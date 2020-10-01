@@ -35,7 +35,7 @@ export default class DefaultKeyboard {
   }
 
   setInput(input) {
-    this.keyboard.setInput(input);
+    this.keyboard.replaceInput({ default: input });
   }
 
   clearInput() {
