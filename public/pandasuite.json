@@ -4,91 +4,262 @@
 
   "system": {
     "localization": false,
-    "actions": [
-      {
-        "id": "toMarker",
-        "name": "Change Image",
-        "locale_name": {
-          "fr_FR": "Change Image"
-        },
-        "params": [
-          { "id": "useless", "name": "Useless", "locale_name": {"fr_FR": "Inutile"}, "type": "Boolean" }
-        ]
-      }
-    ],
-    "events": [
-      {
-        "id": "triggerMarker",
-        "name": "Image",
-        "locale_name": {
-          "fr_FR": "Image"
-        }
-      }
-    ],
-    "markers": [
-      {
-        "params": [
-          { "id": "src", "name": "Source", "locale_name": {"fr_FR": "Source"}, "type": "String" }
-        ]
-      }
-    ]
+    "markers": false
   },
 
   "properties": [
     {
-      "id": "searchTerm",
-      "name": "Search Term",
+      "id": "layout",
+      "type": "Dropdown",
+      "value": "def",
+      "items": [
+        {
+          "id": "def",
+          "name": "Default",
+          "locale_name": {
+            "fr_FR": "Défaut"
+          }    
+        },
+        {
+          "id": "mobile",
+          "name": "Mobile",
+          "locale_name": {
+            "fr_FR": "Mobile"
+          }    
+        },
+        {
+          "id": "ipad",
+          "name": "iPad",
+          "locale_name": {
+            "fr_FR": "iPad"
+          }    
+        },
+        {
+          "id": "numeric",
+          "name": "Numeric",
+          "locale_name": {
+            "fr_FR": "Numérique"
+          }    
+        },
+        {
+          "id": "french",
+          "name": "French",
+          "locale_name": {
+            "fr_FR": "Français"
+          }    
+        },
+        {
+          "id": "arabic",
+          "name": "Arabic",
+          "locale_name": {
+            "fr_FR": "Arabe"
+          }
+        },
+        {
+          "id": "assamese",
+          "name": "Assamese",
+          "locale_name": {
+            "fr_FR": "Assamese"
+          }
+        },
+        {
+          "id": "burmese",
+          "name": "Burmese",
+          "locale_name": {
+            "fr_FR": "Birman"
+          }
+        },
+        {
+          "id": "chinese",
+          "name": "Chinese",
+          "locale_name": {
+            "fr_FR": "Chinois"
+          }
+        },
+        {
+          "id": "czech",
+          "name": "Czech",
+          "locale_name": {
+            "fr_FR": "Tchèque"
+          }
+        },
+        {
+          "id": "farsi",
+          "name": "Farsi",
+          "locale_name": {
+            "fr_FR": "Farsi"
+          }
+        },
+        {
+          "id": "georgian",
+          "name": "Georgian",
+          "locale_name": {
+            "fr_FR": "Géorgien"
+          }
+        },
+        {
+          "id": "german",
+          "name": "German",
+          "locale_name": {
+            "fr_FR": "Allemand"
+          }
+        },
+        {
+          "id": "greek",
+          "name": "Greek",
+          "locale_name": {
+            "fr_FR": "Grec"
+          }
+        },
+        {
+          "id": "hebrew",
+          "name": "Hebrew",
+          "locale_name": {
+            "fr_FR": "Hébreu"
+          }
+        },
+        {
+          "id": "hindi",
+          "name": "Hindi",
+          "locale_name": {
+            "fr_FR": "Hindi"
+          }
+        },
+        {
+          "id": "italian",
+          "name": "Italian",
+          "locale_name": {
+            "fr_FR": "Italien"
+          }
+        },
+        {
+          "id": "japanese",
+          "name": "Japanese",
+          "locale_name": {
+            "fr_FR": "Japonais"
+          }
+        },
+        {
+          "id": "kannada",
+          "name": "Kannada",
+          "locale_name": {
+            "fr_FR": "Kannada"
+          }
+        },
+        {
+          "id": "korean",
+          "name": "Korean",
+          "locale_name": {
+            "fr_FR": "Coréen"
+          }
+        },
+        {
+          "id": "polish",
+          "name": "Polish",
+          "locale_name": {
+            "fr_FR": "Polonais"
+          }
+        },
+        {
+          "id": "russian",
+          "name": "Russian",
+          "locale_name": {
+            "fr_FR": "Russe"
+          }
+        },
+        {
+          "id": "sindhi",
+          "name": "Sindhi",
+          "locale_name": {
+            "fr_FR": "Sindhi"
+          }
+        },
+        {
+          "id": "spanish",
+          "name": "Spanish",
+          "locale_name": {
+            "fr_FR": "Espagnol"
+          }
+        },
+        {
+          "id": "swedish",
+          "name": "Swedish",
+          "locale_name": {
+            "fr_FR": "Suédois"
+          }
+        },
+        {
+          "id": "thai",
+          "name": "Thai",
+          "locale_name": {
+            "fr_FR": "Thaï"
+          }
+        },
+        {
+          "id": "turkish",
+          "name": "Turkish",
+          "locale_name": {
+            "fr_FR": "Turc"
+          }
+        },
+        {
+          "id": "ukrainian",
+          "name": "Ukrainian",
+          "locale_name": {
+            "fr_FR": "Ukrainien"
+          }
+        },
+        {
+          "id": "urdu",
+          "name": "Urdu",
+          "locale_name": {
+            "fr_FR": "Urdu"
+          }
+        }
+      ]
+    },
+    {
+      "id": "darkTheme",
+      "name": "Dark theme",
       "locale_name": {
-        "fr_FR": "Terme de recherche"
+        "fr_FR": "Thème sombre"
       },
-      "type": "String",
-      "value": "panda"
+      "type": "Boolean",
+      "value": false
     }
   ],
 
   "events": [
     {
-      "id": "imageChanged",
-      "name": "Image Changed",
+      "id": "validated",
+      "name": "Validated",
       "locale_name": {
-        "fr_FR": "Image Changée"
+        "fr_FR": "Validé"
       }
     }
   ],
 
   "actions": [
     {
-      "id": "changeColor",
-      "name": "Change Color",
+      "id": "setInput",
+      "name": "Set Input",
+      "locale_name": {
+        "fr_FR": "Définir la saisie"
+      },
       "params": [
         {
-          "id": "backgroundColor",
-          "name": "Background Color",
-          "locale_name": {
-            "fr_FR": "Couleur de fond"
-          },
+          "id": "input",
           "type": "String",
-          "value": "#FFFFFF"
+          "value": ""
         }
       ]
-    }
-  ],
-
-  "synchronization": [
+    },
     {
-      "id": "synchroImages",
-      "name": "Synchronize images",
+      "id": "clearInput",
+      "name": "Clear Input",
       "locale_name": {
-        "fr_FR": "Synchroniser images"
+        "fr_FR": "Effacer la saisie"
       }
-    }
-  ],
-
-  "resources": [
-    {
-      "id": "my_image.png",
-      "type": "Image",
-      "localization": false
     }
   ]
 }
