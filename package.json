@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "html2canvas": "^1.0.0-rc.7",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.19",
     "pandasuite-bridge": "^4.2.2",
     "simple-keyboard": "^2.30.29",
     "simple-keyboard-layouts": "^1.14.8"
