@@ -48,18 +48,20 @@ function onChange(input) {
 }
 
 function sendScreenshot() {
-  html2canvas(document.body, {
-    backgroundColor: null,
-    scale: 2,
-  }).then((canvas) => {
-    canvas.toBlob((blob) => {
-      const fileReader = new FileReader();
-      fileReader.onload = (e) => {
-        PandaBridge.send(PandaBridge.SCREENSHOT_RESULT, [e.target.result]);
-      };
-      fileReader.readAsDataURL(blob);
+  if (PandaBridge.isStudio) {
+    html2canvas(document.body, {
+      backgroundColor: null,
+      scale: 2,
+    }).then((canvas) => {
+      canvas.toBlob((blob) => {
+        const fileReader = new FileReader();
+        fileReader.onload = (e) => {
+          PandaBridge.send(PandaBridge.SCREENSHOT_RESULT, [e.target.result]);
+        };
+        fileReader.readAsDataURL(blob);
+      });
     });
-  });
+  }
 }
 
 function initKeyboard() {
