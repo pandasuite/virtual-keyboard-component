@@ -11,6 +11,7 @@
     {
       "id": "layout",
       "type": "Dropdown",
+      "name": "Type",
       "value": "def",
       "items": [
         {
