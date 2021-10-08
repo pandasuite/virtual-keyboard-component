@@ -236,6 +236,15 @@
       "name": "Validated",
       "locale_name": {
         "fr_FR": "Validé"
+      },
+      "queryable": {
+        "value": "",
+        "__desc_value": {
+          "name": "Input value",
+          "locale_name": {
+            "fr_FR": "Valeur de saisie"
+          }
+        }
       }
     }
   ],
@@ -262,5 +271,15 @@
         "fr_FR": "Effacer la saisie"
       }
     }
-  ]
+  ],
+
+  "queryable": {
+    "value": "",
+    "__desc_value": {
+      "name": "Input value",
+      "locale_name": {
+        "fr_FR": "Valeur de saisie"
+      }
+    }
+  }
 }
