@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "webpack --mode production --devtool none && cd build && zip -r -X '../pandasuite-component.zip' *",
+    "build": "rm -f ./pandasuite-component.zip && webpack --mode production --devtool none && cd build && zip -r -X '../pandasuite-component.zip' *",
     "release": "yarn build && release-it --no-npm.publish"
   },
   "devDependencies": {
@@ -25,7 +25,7 @@
   "dependencies": {
     "html2canvas": "^1.0.0-rc.7",
     "lodash": "^4.17.20",
-    "pandasuite-bridge": "^4.2.2",
+    "pandasuite-bridge": "^4.5.0",
     "simple-keyboard": "^2.30.29",
     "simple-keyboard-layouts": "^1.14.8"
   },

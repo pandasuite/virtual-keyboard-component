@@ -227,10 +227,46 @@
       },
       "type": "Boolean",
       "value": false
+    },
+    {
+      "id": "limitInputLength",
+      "name": "Limit length",
+      "locale_name": {
+        "fr_FR": "Limite la longueur"
+      },
+      "type": "Boolean",
+      "value": false,
+      "separator": true
+    },
+    {
+      "id": "maxLength",
+      "name": "Max length",
+      "locale_name": {
+        "fr_FR": "Longueur max"
+      },
+      "hidden": "!properties.limitInputLength.value",
+      "type": "Integer",
+      "value": 4
     }
   ],
 
   "events": [
+    {
+      "id": "changed",
+      "name": "Changed",
+      "locale_name": {
+        "fr_FR": "Modifié"
+      },
+      "queryable": {
+        "value": "",
+        "__desc_value": {
+          "name": "Input value",
+          "locale_name": {
+            "fr_FR": "Valeur de saisie"
+          }
+        }
+      }
+    },
     {
       "id": "validated",
       "name": "Validated",
@@ -260,7 +296,8 @@
         {
           "id": "input",
           "type": "String",
-          "value": ""
+          "value": "",
+          "bindable": true
         }
       ]
     },

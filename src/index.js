@@ -45,6 +45,7 @@ function onChange(input) {
       value: input,
     },
   });
+  PandaBridge.send('changed', [{ value: input }]);
 }
 
 function sendScreenshot() {
@@ -71,6 +72,10 @@ function initKeyboard() {
     onValidate: (input) => PandaBridge.send('validated', [{ value: input }]),
     dark: properties.darkTheme,
   };
+
+  if (properties.limitInputLength) {
+    options.maxLength = properties.maxLength;
+  }
 
   if (properties.layout === 'def') {
     keyboard = new DefaultKeyboard(options);
