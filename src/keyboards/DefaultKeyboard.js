@@ -6,6 +6,11 @@ export default class DefaultKeyboard {
     const keyboardOptions = merge({
       onKeyPress: (button) => this.onKeyPress(button),
       theme: 'hg-theme-default',
+      display: {
+        '{bksp}': options.language.startsWith('en') ? 'backspace' : 'effacer',
+        '{enter}': options.language.startsWith('en') ? '< enter' : '< entrée',
+      },
+      mergeDisplay: true,
     }, options);
 
     if (keyboardOptions.dark) {

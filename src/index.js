@@ -71,6 +71,7 @@ function initKeyboard() {
     onInit: sendScreenshot,
     onValidate: (input) => PandaBridge.send('validated', [{ value: input }]),
     dark: properties.darkTheme,
+    language: properties[PandaBridge.LANGUAGE] || 'en_US',
   };
 
   if (properties.limitInputLength) {

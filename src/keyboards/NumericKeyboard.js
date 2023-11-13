@@ -8,6 +8,10 @@ export default class NumericKeyboard extends DefaultKeyboard {
         default: ['1 2 3', '4 5 6', '7 8 9', '{shift} 0 _', '{bksp}'],
         shift: ['! / #', '$ % ^', '& * (', '{shift} ) +', '{bksp}'],
       },
+      display: {
+        '{bksp}': options.language.startsWith('en') ? 'backspace' : 'effacer',
+      },
+      mergeDisplay: true,
       theme: 'hg-theme-default hg-layout-numeric numeric-theme',
     }, options));
   }

@@ -36,7 +36,7 @@ export default class IPadKeyboard extends DefaultKeyboard {
         '{smileys}': '\uD83D\uDE03',
         '{shift}': '⇧',
         '{shiftactivated}': '⇧',
-        '{enter}': 'return',
+        '{enter}': options.language.startsWith('en') ? 'return' : 'entrée',
         '{bksp}': '⌫',
         '{altright}': '.?123',
         '{downkeyboard}': '🞃',
