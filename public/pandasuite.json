@@ -19,35 +19,35 @@
           "name": "Default",
           "locale_name": {
             "fr_FR": "Défaut"
-          }    
+          }
         },
         {
           "id": "mobile",
           "name": "Mobile",
           "locale_name": {
             "fr_FR": "Mobile"
-          }    
+          }
         },
         {
           "id": "ipad",
           "name": "iPad",
           "locale_name": {
             "fr_FR": "iPad"
-          }    
+          }
         },
         {
           "id": "numeric",
           "name": "Numeric",
           "locale_name": {
             "fr_FR": "Numérique"
-          }    
+          }
         },
         {
           "id": "french",
           "name": "French",
           "locale_name": {
             "fr_FR": "Français"
-          }    
+          }
         },
         {
           "id": "arabic",

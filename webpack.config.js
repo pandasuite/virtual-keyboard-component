@@ -14,9 +14,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new CopyPlugin({
-      patterns: [
-        { from: 'public' },
-      ],
+      patterns: [{ from: 'public' }],
     }),
   ],
   output: {

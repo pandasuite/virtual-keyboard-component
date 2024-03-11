@@ -3,15 +3,18 @@ import merge from 'lodash/merge';
 
 export default class DefaultKeyboard {
   constructor(options) {
-    const keyboardOptions = merge({
-      onKeyPress: (button) => this.onKeyPress(button),
-      theme: 'hg-theme-default',
-      display: {
-        '{bksp}': options.language.startsWith('en') ? 'backspace' : 'effacer',
-        '{enter}': options.language.startsWith('en') ? '< enter' : '< entrée',
+    const keyboardOptions = merge(
+      {
+        onKeyPress: (button) => this.onKeyPress(button),
+        theme: 'hg-theme-default',
+        display: {
+          '{bksp}': options.language.startsWith('en') ? 'backspace' : 'effacer',
+          '{enter}': options.language.startsWith('en') ? '< enter' : '< entrée',
+        },
+        mergeDisplay: true,
       },
-      mergeDisplay: true,
-    }, options);
+      options,
+    );
 
     if (keyboardOptions.dark) {
       keyboardOptions.theme += ' darkTheme';
@@ -25,7 +28,10 @@ export default class DefaultKeyboard {
   onKeyPress(button) {
     if (button === '{shift}' || button === '{lock}') {
       this.handleShift();
-    } else if ((button === '{enter}' || button === '{ent}') && this.onValidate) {
+    } else if (
+      (button === '{enter}' || button === '{ent}') &&
+      this.onValidate
+    ) {
       this.onValidate(this.keyboard.getInput());
     }
   }

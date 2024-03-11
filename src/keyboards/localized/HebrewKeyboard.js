@@ -4,8 +4,13 @@ import DefaultKeyboard from '../DefaultKeyboard';
 
 export default class HebrewKeyboard extends DefaultKeyboard {
   constructor(options) {
-    super(merge({
-      layout,
-    }, options));
+    super(
+      merge(
+        {
+          layout,
+        },
+        options,
+      ),
+    );
   }
 }
