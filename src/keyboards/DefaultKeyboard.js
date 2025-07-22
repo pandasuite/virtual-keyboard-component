@@ -8,8 +8,8 @@ export default class DefaultKeyboard {
         onKeyPress: (button) => this.onKeyPress(button),
         theme: 'hg-theme-default',
         display: {
-          '{bksp}': options.language.startsWith('en') ? 'backspace' : 'effacer',
-          '{enter}': options.language.startsWith('en') ? '< enter' : '< entrée',
+          '{bksp}': options.language.startsWith('fr') ? 'effacer' : 'backspace',
+          '{enter}': options.language.startsWith('fr') ? '< entrée' : '< enter',
         },
         mergeDisplay: true,
       },

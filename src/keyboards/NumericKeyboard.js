@@ -11,9 +11,9 @@ export default class NumericKeyboard extends DefaultKeyboard {
             shift: ['! / #', '$ % ^', '& * (', '{shift} ) +', '{bksp}'],
           },
           display: {
-            '{bksp}': options.language.startsWith('en')
-              ? 'backspace'
-              : 'effacer',
+            '{bksp}': options.language.startsWith('fr')
+              ? 'effacer'
+              : 'backspace',
           },
           mergeDisplay: true,
           theme: 'hg-theme-default hg-layout-numeric numeric-theme',

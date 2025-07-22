@@ -25,7 +25,7 @@ export default class MobileKeyboard extends DefaultKeyboard {
           },
           display: {
             '{numbers}': '123',
-            '{ent}': options.language.startsWith('en') ? 'return' : 'entrée',
+            '{ent}': options.language.startsWith('fr') ? 'entrée' : 'return',
             '{escape}': 'esc ⎋',
             '{tab}': 'tab ⇥',
             '{backspace}': '⌫',
