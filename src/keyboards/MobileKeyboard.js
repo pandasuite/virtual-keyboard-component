@@ -1,8 +1,11 @@
 import merge from 'lodash/merge';
 import DefaultKeyboard from './DefaultKeyboard';
+import { getKeyboardLabels } from '../i18n/keyboardLabels';
 
 export default class MobileKeyboard extends DefaultKeyboard {
   constructor(options) {
+    const language = options && options.language;
+    const labels = getKeyboardLabels(language);
     super(
       merge(
         {
@@ -25,7 +28,7 @@ export default class MobileKeyboard extends DefaultKeyboard {
           },
           display: {
             '{numbers}': '123',
-            '{ent}': options.language.startsWith('fr') ? 'entrée' : 'return',
+            '{ent}': labels.returnKey,
             '{escape}': 'esc ⎋',
             '{tab}': 'tab ⇥',
             '{backspace}': '⌫',

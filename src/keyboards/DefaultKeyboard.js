@@ -1,15 +1,19 @@
 import Keyboard from 'simple-keyboard';
 import merge from 'lodash/merge';
 
+import { getKeyboardLabels } from '../i18n/keyboardLabels';
+
 export default class DefaultKeyboard {
   constructor(options) {
+    const language = options && options.language;
+    const labels = getKeyboardLabels(language);
     const keyboardOptions = merge(
       {
         onKeyPress: (button) => this.onKeyPress(button),
         theme: 'hg-theme-default',
         display: {
-          '{bksp}': options.language.startsWith('fr') ? 'effacer' : 'backspace',
-          '{enter}': options.language.startsWith('fr') ? '< entrée' : '< enter',
+          '{bksp}': labels.backspace,
+          '{enter}': labels.enterWithArrow,
         },
         mergeDisplay: true,
       },

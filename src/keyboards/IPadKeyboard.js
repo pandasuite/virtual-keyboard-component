@@ -1,8 +1,11 @@
 import merge from 'lodash/merge';
 import DefaultKeyboard from './DefaultKeyboard';
+import { getKeyboardLabels } from '../i18n/keyboardLabels';
 
 export default class IPadKeyboard extends DefaultKeyboard {
   constructor(options) {
+    const language = options && options.language;
+    const labels = getKeyboardLabels(language);
     super(
       merge(
         {
@@ -38,7 +41,7 @@ export default class IPadKeyboard extends DefaultKeyboard {
             '{smileys}': '\uD83D\uDE03',
             '{shift}': '⇧',
             '{shiftactivated}': '⇧',
-            '{enter}': options.language.startsWith('fr') ? 'entrée' : 'return',
+            '{enter}': labels.returnKey,
             '{bksp}': '⌫',
             '{altright}': '.?123',
             '{downkeyboard}': '🞃',

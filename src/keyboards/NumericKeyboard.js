@@ -1,8 +1,11 @@
 import merge from 'lodash/merge';
 import DefaultKeyboard from './DefaultKeyboard';
+import { getKeyboardLabels } from '../i18n/keyboardLabels';
 
 export default class NumericKeyboard extends DefaultKeyboard {
   constructor(options) {
+    const language = options && options.language;
+    const labels = getKeyboardLabels(language);
     super(
       merge(
         {
@@ -11,9 +14,7 @@ export default class NumericKeyboard extends DefaultKeyboard {
             shift: ['! / #', '$ % ^', '& * (', '{shift} ) +', '{bksp}'],
           },
           display: {
-            '{bksp}': options.language.startsWith('fr')
-              ? 'effacer'
-              : 'backspace',
+            '{bksp}': labels.backspace,
           },
           mergeDisplay: true,
           theme: 'hg-theme-default hg-layout-numeric numeric-theme',
