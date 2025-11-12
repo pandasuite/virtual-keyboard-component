@@ -143,10 +143,10 @@ PandaBridge.init(() => {
   PandaBridge.onLoad((pandaData) => {
     properties = pandaData.properties;
 
-    if (document.readyState === 'complete') {
-      initKeyboard();
-    } else {
+    if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initKeyboard, false);
+    } else {
+      initKeyboard();
     }
   });
 
