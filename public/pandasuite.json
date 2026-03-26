@@ -1,12 +1,18 @@
 {
+  "meta": {
+    "stype": "virtual-keyboard",
+    "componentURL": "https://github.com/pandasuite/virtual-keyboard-component/",
+    "description": "On-screen virtual keyboard for touch interfaces. Supports AZERTY, QWERTY, numeric layouts, dark theme, and input length limits.",
+    "locale_description": {
+      "fr_FR": "Clavier virtuel à l'écran pour les interfaces tactiles. Supporte les dispositions AZERTY, QWERTY, numérique, le thème sombre et les limites de longueur de saisie."
+    }
+  },
   "version": "2.0.0",
   "main": "",
-
   "system": {
     "localization": false,
     "markers": false
   },
-
   "properties": [
     {
       "id": "layout",
@@ -217,7 +223,11 @@
             "fr_FR": "Urdu"
           }
         }
-      ]
+      ],
+      "description": "Keyboard layout (French AZERTY, English QWERTY, numeric, etc.).",
+      "locale_description": {
+        "fr_FR": "Disposition du clavier (AZERTY français, QWERTY anglais, numérique, etc.)."
+      }
     },
     {
       "id": "darkTheme",
@@ -226,7 +236,11 @@
         "fr_FR": "Thème sombre"
       },
       "type": "Boolean",
-      "value": false
+      "value": false,
+      "description": "Use a dark color theme for the keyboard.",
+      "locale_description": {
+        "fr_FR": "Utiliser un thème de couleur sombre pour le clavier."
+      }
     },
     {
       "id": "limitInputLength",
@@ -236,7 +250,11 @@
       },
       "type": "Boolean",
       "value": false,
-      "separator": true
+      "separator": true,
+      "description": "Limit the maximum number of characters that can be typed.",
+      "locale_description": {
+        "fr_FR": "Limiter le nombre maximum de caractères pouvant être tapés."
+      }
     },
     {
       "id": "maxLength",
@@ -246,10 +264,13 @@
       },
       "hidden": "!properties.limitInputLength.value",
       "type": "Integer",
-      "value": 4
+      "value": 4,
+      "description": "Maximum character count. Active when input length limit is enabled.",
+      "locale_description": {
+        "fr_FR": "Nombre maximum de caractères. Actif quand la limite de longueur de saisie est activée."
+      }
     }
   ],
-
   "events": [
     {
       "id": "changed",
@@ -263,8 +284,16 @@
           "name": "Input value",
           "locale_name": {
             "fr_FR": "Valeur de saisie"
+          },
+          "description": "Current input text after the change.",
+          "locale_description": {
+            "fr_FR": "Texte saisi actuel après le changement."
           }
         }
+      },
+      "description": "Fires when the input text changes (keystroke).",
+      "locale_description": {
+        "fr_FR": "Se déclenche quand le texte saisi change (frappe de touche)."
       }
     },
     {
@@ -279,12 +308,19 @@
           "name": "Input value",
           "locale_name": {
             "fr_FR": "Valeur de saisie"
+          },
+          "description": "Final input text at validation.",
+          "locale_description": {
+            "fr_FR": "Texte saisi final à la validation."
           }
         }
+      },
+      "description": "Fires when the user presses Enter/Return on the keyboard.",
+      "locale_description": {
+        "fr_FR": "Se déclenche quand l'utilisateur appuie sur Entrée/Retour sur le clavier."
       }
     }
   ],
-
   "actions": [
     {
       "id": "setInput",
@@ -297,25 +333,40 @@
           "id": "input",
           "type": "String",
           "value": "",
-          "bindable": true
+          "bindable": true,
+          "description": "Text value to set as the current input.",
+          "locale_description": {
+            "fr_FR": "Valeur de texte à définir comme saisie actuelle."
+          }
         }
-      ]
+      ],
+      "description": "Set the keyboard input text programmatically.",
+      "locale_description": {
+        "fr_FR": "Définir le texte de saisie du clavier par programmation."
+      }
     },
     {
       "id": "clearInput",
       "name": "Clear Input",
       "locale_name": {
         "fr_FR": "Effacer la saisie"
+      },
+      "description": "Clear the keyboard input.",
+      "locale_description": {
+        "fr_FR": "Effacer la saisie du clavier."
       }
     }
   ],
-
   "queryable": {
     "value": "",
     "__desc_value": {
       "name": "Input value",
       "locale_name": {
         "fr_FR": "Valeur de saisie"
+      },
+      "description": "Current keyboard input value, available for data binding.",
+      "locale_description": {
+        "fr_FR": "Valeur de saisie actuelle du clavier, disponible pour le binding de données."
       }
     }
   }
